@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 @RunWith(SerenityRunner.class)
 public class SearchColorTests {
 
-    @Managed(uniqueSession = false)
+    @Managed(uniqueSession = true)
     WebDriver driver;
 
     @Steps
