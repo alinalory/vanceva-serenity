@@ -30,4 +30,19 @@ public class CartTest extends PageObject {
         cartSteps.checkProductAdded();
     }
 
+    @Test
+    public void increaseQuantityInCart(){
+        cartSteps.selectOneColor();
+        cartSteps.addToCart();
+        cartSteps.increaseQuantityOfOneProduct();
+
+    }
+
+    @Test
+    public void deleteOneProduct(){
+        cartSteps.selectOneColor();
+        cartSteps.addToCart();
+        cartSteps.deleteOneProduct();
+    }
+
 }
