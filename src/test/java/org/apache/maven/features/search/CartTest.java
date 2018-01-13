@@ -15,7 +15,7 @@ public class CartTest extends PageObject {
 
 
 
-    @Managed(uniqueSession = true)
+    @Managed(uniqueSession = false)
     WebDriver driver;
 
     @Steps
