@@ -21,5 +21,9 @@ public class LoginTests {
     public void loginTest()
     {
         loginSteps.login();
+        loginSteps.setEmailField();
+        loginSteps.setPasswordField();
+        loginSteps.clicklogin();
+        loginSteps.checkSuccesLogin();
     }
 }

@@ -14,10 +14,25 @@ public class LoginSteps extends ScenarioSteps {
     public void login()
     {
         loginPage.open();
-        loginPage.setLoginEmailField("alina@mailinator.com");
-        loginPage.setLoginPasswordField("vanceva123");
-        loginPage.submitLogin();
-        userPage.checkSuccessLogin();
-
     }
+
+    @Step
+    public void setEmailField(){
+        loginPage.setLoginEmailField("alina@mailinator.com");
+    }
+    @Step
+    public void setPasswordField(){
+        loginPage.setLoginPasswordField("vanceva123");
+    }
+    @Step
+    public void clicklogin()
+    {
+        loginPage.submitLogin();
+    }
+    @Step
+    public void checkSuccesLogin()
+        {
+            userPage.checkSuccessLogin();
+
+        }
 }
