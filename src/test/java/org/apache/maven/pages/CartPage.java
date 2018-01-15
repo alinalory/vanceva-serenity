@@ -17,7 +17,7 @@ public class CartPage extends PageObject {
     @FindBy(css = "#edit-submit.form-submit.ajax-processed ")
     private WebElementFacade updateButton;
 
-    @FindBy(css = ".delete-line-item.form-submit")
+    @FindBy(css = "td.views-field.views-field-edit-delete")
     private WebElementFacade deleteButton;
 
     @FindBy(css = ".cart-empty-page")
