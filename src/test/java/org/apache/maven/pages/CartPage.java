@@ -23,6 +23,9 @@ public class CartPage extends PageObject {
     @FindBy(css = ".cart-empty-page")
     private WebElementFacade cartEmpty;
 
+    @FindBy(css = ".line-item-summary-checkout > a")
+    private WebElementFacade completeCheckout;
+
     Random myRandomizer = new Random();
     String randomValue = "";
 
@@ -53,6 +56,10 @@ public class CartPage extends PageObject {
 
     public void checkIncreasedValue(){
         Assert.assertTrue(randomValue.equals(quantityField.getValue()));
+    }
+
+    public void setCompleteCheckout(){
+        clickOn(completeCheckout);
     }
 
 

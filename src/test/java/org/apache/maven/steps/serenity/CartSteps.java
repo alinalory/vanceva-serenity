@@ -54,4 +54,10 @@ public class CartSteps extends ScenarioSteps {
      //   cartPage.open(); // refresh the page
         cartPage.checkEmptyCart();
     }
+
+    @Step
+    public void selectCompleteCheckout(){
+        cartPage.open();
+        cartPage.setCompleteCheckout();
+    }
 }

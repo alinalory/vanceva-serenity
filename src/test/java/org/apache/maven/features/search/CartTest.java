@@ -2,10 +2,10 @@ package org.apache.maven.features.search;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.PageObject;
 import org.apache.maven.steps.serenity.CartSteps;
+import org.apache.maven.steps.serenity.CheckoutSteps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -15,11 +15,13 @@ public class CartTest extends PageObject {
 
 
 
-    @Managed(uniqueSession = true)
+    @Managed(uniqueSession = false)
     WebDriver driver;
 
     @Steps
     CartSteps cartSteps;
+    @Steps
+    CheckoutSteps checkoutSteps;
 
     @Test
     public void addToCart()
@@ -42,7 +44,15 @@ public class CartTest extends PageObject {
     public void deleteOneProduct(){
         cartSteps.selectOneColor();
         cartSteps.addToCart();
-        cartSteps.deleteOneProduct();
+//        cartSteps.deleteOneProduct();
+    }
+
+    @Test
+    public void checkout(){
+        cartSteps.selectOneColor();
+        cartSteps.addToCart();
+        cartSteps.selectCompleteCheckout();
+        checkoutSteps.completeCheckout();
     }
 
 }
