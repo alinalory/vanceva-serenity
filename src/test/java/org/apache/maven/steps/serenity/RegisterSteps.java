@@ -53,7 +53,12 @@ public class RegisterSteps extends ScenarioSteps {
         registerPage.clickPositionField();
         registerPage.selectPosition();
     }
-
+//
+    @Step
+    public void setPhoneFieldRandom(int phoneNumberRandom)
+    {
+        registerPage.setPhoneFieldRandom(phoneNumberRandom);
+    }
     @Step
     public void setPhoneField( String phoneNumber)
     {

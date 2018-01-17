@@ -4,8 +4,11 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.apache.maven.pages.LoginPage;
 import org.apache.maven.pages.UserPage;
+import org.apache.maven.utils.Constante;
 
 public class LoginSteps extends ScenarioSteps {
+
+    Constante constante;
 
     LoginPage loginPage;
     UserPage userPage;
@@ -18,11 +21,11 @@ public class LoginSteps extends ScenarioSteps {
 
     @Step
     public void setEmailField(){
-        loginPage.setLoginEmailField("alina@mailinator.com");
+        loginPage.setLoginEmailField(constante.email);
     }
     @Step
     public void setPasswordField(){
-        loginPage.setLoginPasswordField("vanceva123");
+        loginPage.setLoginPasswordField(constante.password);
     }
     @Step
     public void clicklogin()

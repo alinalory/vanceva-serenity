@@ -74,9 +74,6 @@ public class ColorsPage extends PageObject {
     private String productNameFromMiniCartText;
 
 
-
-
-
     Random myRandomizer = new Random();
 
     public void setSearchColor() {
@@ -89,14 +86,12 @@ public class ColorsPage extends PageObject {
 
     }
 
-    public void clickSearchButton()
-    {
+    public void clickSearchButton() {
         clickOn(searchButton);
         waitABit(2000);
     }
 
-    public void checkColorBox()
-    {
+    public void checkColorBox() {
         if (colorBoxes.size() > 0) {
             Assert.assertTrue(containsElements(".color-box-swatch a"));
         } else {
@@ -104,28 +99,23 @@ public class ColorsPage extends PageObject {
         }
     }
 
-    public void clickSearchOptionBar()
-    {
+    public void clickSearchOptionBar() {
         clickOn(searchOptionBar);
     }
 
-    public void select_RGB_Color_Code()
-    {
+    public void select_RGB_Color_Code() {
         searchOptionRGBColorCode.click();
     }
 
-    public void select_Pantone_Color_Code()
-    {
+    public void select_Pantone_Color_Code() {
         searchOptionPantoneColorCode.click();
     }
 
-    public void select_RAL_Color_Code()
-    {
+    public void select_RAL_Color_Code() {
         searchOptionRALColorCode.click();
     }
 
-    public void select_NCS_Color_Code()
-    {
+    public void select_NCS_Color_Code() {
         searchOptionNCSColorCode.click();
     }
 
@@ -157,57 +147,47 @@ public class ColorsPage extends PageObject {
     }
 
 
-
-    public void clickSearchButtonRGB()
-    {
+    public void clickSearchButtonRGB() {
         clickOn(searchButtonRGB);
         waitABit(2000);
     }
 
-    public void clickSearchButtonPantone_RAL_NCS()
-    {
+    public void clickSearchButtonPantone_RAL_NCS() {
         clickOn(searchButtonPantone);
         waitABit(2000);
     }
 
-    public void selectOneColorFamily()
-    {
-        if (colorBoxesList.size() > 0){
+    public void selectOneColorFamily() {
+        if (colorBoxesList.size() > 0) {
             colorBoxesList.get(myRandomizer.nextInt(colorBoxesList.size())).click();
             waitABit(2000);
         }
 
     }
 
-    public void selectOneColor()
-    {
-        if(colorBoxes.size() > 0)
-        {
-                colorBoxes.get(myRandomizer.nextInt(colorBoxes.size())).click();
-                waitABit(2000);
-                }
+    public void selectOneColor() {
+        if (colorBoxes.size() > 0) {
+            colorBoxes.get(myRandomizer.nextInt(colorBoxes.size())).click();
+            waitABit(2000);
+        }
 
     }
 
-    public String getColorCode()
-    {
+    public String getColorCode() {
         return colorCodeText;
     }
 
-    public void clickAddToCart()
-    {
+    public void clickAddToCart() {
         colorCodeText = colorCode.getText();
         clickOn(addToCartButton);
         waitABit(3000);
     }
 
-    public void openMiniCart()
-    {
+    public void openMiniCart() {
         clickOn(miniCart);
     }
 
-    public void checkProductAdded()
-    {
+    public void checkProductAdded() {
         Assert.assertTrue(productNameFromMiniCart.getText().contains(getColorCode()));
     }
 }

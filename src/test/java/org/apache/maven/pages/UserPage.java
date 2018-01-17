@@ -11,6 +11,6 @@ public class UserPage extends PageObject {
 
     public void checkSuccessLogin()
     {
-        welcomeMessage.getText().contains("Welcome");
+        welcomeMessage.shouldContainText("Welcome");
     }
 }

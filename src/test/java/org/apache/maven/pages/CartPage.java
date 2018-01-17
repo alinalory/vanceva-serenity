@@ -44,7 +44,8 @@ public class CartPage extends PageObject {
     }
 
     public void clickDeleteButton(){
-        waitABit(2000);
+//        waitABit(2000);
+        waitFor(deleteButton);
         clickOn(deleteButton);
     }
 

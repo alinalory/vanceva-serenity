@@ -6,6 +6,7 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.pages.PageObject;
 import org.apache.maven.steps.serenity.CartSteps;
 import org.apache.maven.steps.serenity.CheckoutSteps;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -14,9 +15,13 @@ import org.openqa.selenium.WebDriver;
 public class CartTest extends PageObject {
 
 
-
     @Managed(uniqueSession = false)
     WebDriver driver;
+
+    @Before
+    public void maximize(){
+        driver.manage().window().maximize();
+    }
 
     @Steps
     CartSteps cartSteps;
@@ -24,8 +29,7 @@ public class CartTest extends PageObject {
     CheckoutSteps checkoutSteps;
 
     @Test
-    public void addToCart()
-    {
+    public void addToCart() {
         cartSteps.selectOneColor();
         cartSteps.addToCart();
         cartSteps.openMiniCart();
@@ -33,7 +37,7 @@ public class CartTest extends PageObject {
     }
 
     @Test
-    public void increaseQuantityInCart(){
+    public void increaseQuantityInCart() {
         cartSteps.selectOneColor();
         cartSteps.addToCart();
         cartSteps.increaseQuantityOfOneProduct();
@@ -41,14 +45,14 @@ public class CartTest extends PageObject {
     }
 
     @Test
-    public void deleteOneProduct(){
+    public void deleteOneProduct() {
         cartSteps.selectOneColor();
         cartSteps.addToCart();
-//        cartSteps.deleteOneProduct();
+        cartSteps.deleteOneProduct();
     }
 
     @Test
-    public void checkout(){
+    public void checkout() {
         cartSteps.selectOneColor();
         cartSteps.addToCart();
         cartSteps.selectCompleteCheckout();
