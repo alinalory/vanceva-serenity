@@ -11,9 +11,8 @@ public class TestBase {
 
     }
 
-
     public  int getRandomInt(){
-        return ThreadLocalRandom.current().nextInt( 1, 10 + 1);
+        return ThreadLocalRandom.current().nextInt( 1, 100000000            + 1);
     }
 }
 

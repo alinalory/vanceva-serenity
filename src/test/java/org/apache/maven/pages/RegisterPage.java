@@ -14,10 +14,6 @@ import java.util.concurrent.ThreadLocalRandom;
 @DefaultUrl("https://www.vanceva.com/user/register")
 public class RegisterPage extends PageObject {
 
-    public String randomString = RandomStringUtils.randomAlphanumeric(12);
-
-    public int randomNum = ThreadLocalRandom.current().nextInt(1, 10 + 1);
-
     @FindBy(css = "#edit-field-vanceva-first-name-und-0-value")
     private WebElementFacade firstNameField;
 
@@ -118,7 +114,6 @@ public class RegisterPage extends PageObject {
 
     public void clickCreateNewAccount(){
         clickOn(createNewAccount);
-        waitFor(emailErrorMessage);
     }
 
     public void emailAlreadyRegistered(){

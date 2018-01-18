@@ -28,18 +28,23 @@ public class RegisterTests {
     private int phone;
 
     @Before
+    public void maximize() {
+        driver.manage().window().maximize();
+    }
+
+
+    @Before
     public void init(){
     TestBase testBase = new TestBase();
-    firstname = testBase.getRandomString(7)+"";
+    firstname = testBase.getRandomString(7);
     lastname = testBase.getRandomString(6);
     email = testBase.getRandomString(5)+ constante.emailRandom;
     password = testBase.getRandomString(6);
     company = testBase.getRandomString(10);
-    phone = testBase.getRandomInt();}
-
-    public void maximize() {
-            driver.manage().window().maximize();
+    phone = testBase.getRandomInt();
     }
+
+
     @Steps
     RegisterSteps registerSteps;
 
