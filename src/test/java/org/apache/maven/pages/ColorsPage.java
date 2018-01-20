@@ -3,6 +3,7 @@ package org.apache.maven.pages;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.apache.maven.utils.Messages;
 import org.junit.Assert;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,6 +12,8 @@ import java.util.Random;
 
 @DefaultUrl("https://www.vanceva.com/color-selector")
 public class ColorsPage extends PageObject {
+
+    Messages messages;
 
     @FindBy(css = "#edit-vanceva-color-code")
     private WebElementFacade searchColor;
@@ -21,7 +24,7 @@ public class ColorsPage extends PageObject {
     @FindBy(css = ".color-selector-boxes .views-row")
     private List<WebElementFacade> colorBoxes;
 
-    @FindBy(css = "a.jquery-once-1-processed.color-family-changed-processed")
+    @FindBy(css = ".form-item:not(.form-item-edit-color-family-double-sided) > a.jquery-once-1-processed.color-family-changed-processed")
     private List<WebElementFacade> colorBoxesList;
 
     @FindBy(css = ".color-selector-boxes h2")
@@ -95,7 +98,7 @@ public class ColorsPage extends PageObject {
         if (colorBoxes.size() > 0) {
             Assert.assertTrue(containsElements(".color-box-swatch a"));
         } else {
-            Assert.assertTrue(messageColorAreNotAvailable.getText().contains("Sorry, data and a visual of this color are not available at this time"));
+            Assert.assertTrue(messageColorAreNotAvailable.getText().contains(messages.COLOR_NOT_AVAILABLE));
         }
     }
 

@@ -38,7 +38,7 @@ public class RegisterTests {
     TestBase testBase = new TestBase();
     firstname = testBase.getRandomString(7);
     lastname = testBase.getRandomString(6);
-    email = testBase.getRandomString(5)+ constante.emailRandom;
+    email = testBase.getRandomString(5)+ constante.EMAIL_RANDOM;
     password = testBase.getRandomString(6);
     company = testBase.getRandomString(10);
     phone = testBase.getRandomInt();
@@ -59,19 +59,19 @@ public class RegisterTests {
         registerSteps.selectPosition();
         registerSteps.setPhoneFieldRandom(phone);
         registerSteps.clickCreateNewAccount();
-//        registerSteps.checkEmailAlreadyRegistered();
+        registerSteps.checkNewAccountCreated();
     }
 
     @Test
     public void registerUserAlina() {
-        registerSteps.setFirstName(constante.firstName);
-        registerSteps.setLastName(constante.lastName);
-        registerSteps.setEmailField(constante.email);
-        registerSteps.setPasswordField(constante.password);
-        registerSteps.setConfirmationField(constante.password);
-        registerSteps.setCompanyField(constante.company);
+        registerSteps.setFirstName(constante.FIRST_NAME);
+        registerSteps.setLastName(constante.LAST_NAME);
+        registerSteps.setEmailField(constante.EMAIL);
+        registerSteps.setPasswordField(constante.PASSWORD);
+        registerSteps.setConfirmationField(constante.PASSWORD);
+        registerSteps.setCompanyField(constante.COMPANY);
         registerSteps.selectPosition();
-        registerSteps.setPhoneField(constante.phone);
+        registerSteps.setPhoneField(constante.PHONE);
         registerSteps.clickCreateNewAccount();
         registerSteps.checkEmailAlreadyRegistered();
     }

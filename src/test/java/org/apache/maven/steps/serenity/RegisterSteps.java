@@ -76,4 +76,10 @@ public class RegisterSteps extends ScenarioSteps {
     {
         registerPage.emailAlreadyRegistered();
     }
+
+    @Step
+    public void checkNewAccountCreated()
+    {
+        registerPage.checkNewAccountCreated();
+    }
 }

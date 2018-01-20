@@ -21,11 +21,11 @@ public class LoginSteps extends ScenarioSteps {
 
     @Step
     public void setEmailField(){
-        loginPage.setLoginEmailField(constante.email);
+        loginPage.setLoginEmailField(constante.EMAIL);
     }
     @Step
     public void setPasswordField(){
-        loginPage.setLoginPasswordField(constante.password);
+        loginPage.setLoginPasswordField(constante.PASSWORD);
     }
     @Step
     public void clicklogin()

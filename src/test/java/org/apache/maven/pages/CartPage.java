@@ -3,6 +3,7 @@ package org.apache.maven.pages;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+import org.apache.maven.utils.Messages;
 import org.junit.Assert;
 import org.openqa.selenium.support.FindBy;
 
@@ -10,6 +11,7 @@ import java.util.Random;
 
 @DefaultUrl("https://www.vanceva.com/cart")
 public class CartPage extends PageObject {
+    Messages messages;
 
     @FindBy(css = ".views-table .form-item input")
     private WebElementFacade quantityField;
@@ -51,7 +53,7 @@ public class CartPage extends PageObject {
 
     public void checkEmptyCart(){
         waitFor(cartEmpty);
-        Assert.assertTrue(cartEmpty.getText().contains("Your shopping cart is empty."));
+        Assert.assertTrue(cartEmpty.getText().contains(messages.CART_EMPTY));
     }
 
 

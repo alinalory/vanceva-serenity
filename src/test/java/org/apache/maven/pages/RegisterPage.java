@@ -54,6 +54,9 @@ public class RegisterPage extends PageObject {
     @FindBy(css = ".messages.error.messages-inline")
     private WebElementFacade emailErrorMessage;
 
+    @FindBy(css = ".error")
+    private List<WebElementFacade> errorMessages;
+
     private String user_email;
 
     Random myRandomizer = new Random();
@@ -114,6 +117,10 @@ public class RegisterPage extends PageObject {
 
     public void clickCreateNewAccount(){
         clickOn(createNewAccount);
+    }
+
+    public void checkNewAccountCreated(){
+        Assert.assertTrue(errorMessages.size() == 0);
     }
 
     public void emailAlreadyRegistered(){
